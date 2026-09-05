@@ -1,0 +1,10 @@
+{
+  "name": "Trade Gate",
+  "description": "Personal Pre-Trade Discipline & Trading Checklist Web Terminal with Durjoy AI & Compounding Plan",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

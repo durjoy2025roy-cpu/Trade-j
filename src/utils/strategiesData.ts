@@ -1,0 +1,111 @@
+import { ChecklistItem, StrategyType } from '../types';
+
+export const SILVER_BULLET_CHECKLIST: ChecklistItem[] = [
+  {
+    id: 'sb_step_1',
+    stepNumber: 1,
+    stepTitle: 'Daily Levels',
+    timeframe: 'Daily (1D)',
+    instruction: 'PDH (গতকালের High) এবং PDL (গতকালের Low) লেভেল ২টিতে লাইন এঁকে রাখুন।',
+    step: 'Step 1: Daily Levels',
+    label: 'Daily Levels',
+    description: 'PDH (গতকালের High) এবং PDL (গতকালের Low) লেভেল ২টিতে লাইন এঁকে রাখুন।',
+    checked: false,
+  },
+  {
+    id: 'sb_step_2',
+    stepNumber: 2,
+    stepTitle: 'Time Window',
+    timeframe: 'Clock / Local',
+    instruction: 'ঘড়িতে সিলভার বুলেট টাইম উইন্ডো চালু আছে তো? London: 15:00–16:00 অথবা NY: 20:00–21:00 BDT',
+    step: 'Step 2: Time Window',
+    label: 'Time Window',
+    description: 'ঘড়িতে সিলভার বুলেট টাইম উইন্ডো চালু আছে তো? London: 15:00–16:00 অথবা NY: 20:00–21:00 BDT',
+    checked: false,
+  },
+  {
+    id: 'sb_step_3',
+    stepNumber: 3,
+    stepTitle: 'Sweep Check',
+    timeframe: 'M5 / M1',
+    instruction: 'প্রাইস কি PDH বা PDL লেভেলে গিয়ে Liquidity Sweep করেছে?',
+    step: 'Step 3: Sweep Check',
+    label: 'Sweep Check',
+    description: 'প্রাইস কি PDH বা PDL লেভেলে গিয়ে Liquidity Sweep করেছে?',
+    checked: false,
+  },
+  {
+    id: 'sb_step_4',
+    stepNumber: 4,
+    stepTitle: 'MSS & FVG',
+    timeframe: 'M1',
+    instruction: 'Sweep-এর পর Market Structure Shift (MSS) হয়েছে এবং FVG বক্সে মার্ক করা হয়েছে?',
+    step: 'Step 4: MSS & FVG',
+    label: 'MSS & FVG',
+    description: 'Sweep-এর পর Market Structure Shift (MSS) হয়েছে এবং FVG বক্সে মার্ক করা হয়েছে?',
+    checked: false,
+  },
+  {
+    id: 'sb_step_5',
+    stepNumber: 5,
+    stepTitle: 'Entry & RRR',
+    timeframe: 'M1',
+    instruction: 'প্রাইস FVG বক্সে টাচ করেছে এবং ন্যূনতম 1:2 RRR সেট করা হয়েছে?',
+    step: 'Step 5: Entry & RRR',
+    label: 'Entry & RRR',
+    description: 'প্রাইস FVG বক্সে টাচ করেছে এবং ন্যূনতম 1:2 RRR সেট করা হয়েছে?',
+    checked: false,
+  },
+];
+
+export const EMA_SWING_CHECKLIST: ChecklistItem[] = [
+  {
+    id: 'ema_step_1',
+    stepNumber: 1,
+    stepTitle: 'Trend & Key Levels',
+    timeframe: 'Daily (1D)',
+    instruction: '9/20 EMA ডিরেকশন অনুযায়ী ওভারঅল ট্রেন্ড ঠিক আছে এবং সাপোর্ট/রেজিস্ট্যান্স মার্ক করা হয়েছে?',
+    step: 'Step 1: Trend & Key Levels',
+    label: 'Trend & Key Levels',
+    description: '9/20 EMA ডিরেকশন অনুযায়ী ওভারঅল ট্রেন্ড ঠিক আছে এবং সাপোর্ট/রেজিস্ট্যান্স মার্ক করা হয়েছে?',
+    checked: false,
+  },
+  {
+    id: 'ema_step_2',
+    stepNumber: 2,
+    stepTitle: 'Dynamic Pullback',
+    timeframe: 'H4 / H1',
+    instruction: 'প্রাইস কি রিট্রেস করে 9/20 EMA Dynamic Zone-এ ফিরে এসেছে?',
+    step: 'Step 2: Dynamic Pullback',
+    label: 'Dynamic Pullback',
+    description: 'প্রাইস কি রিট্রেস করে 9/20 EMA Dynamic Zone-এ ফিরে এসেছে?',
+    checked: false,
+  },
+  {
+    id: 'ema_step_3',
+    stepNumber: 3,
+    stepTitle: 'Rejection Candle',
+    timeframe: 'H4 / H1',
+    instruction: 'EMA জোনে কোনো Rejection Candle (Hammer, Shooting Star বা Engulfing) তৈরি হয়েছে?',
+    step: 'Step 3: Rejection Candle',
+    label: 'Rejection Candle',
+    description: 'EMA জোনে কোনো Rejection Candle (Hammer, Shooting Star বা Engulfing) তৈরি হয়েছে?',
+    checked: false,
+  },
+  {
+    id: 'ema_step_4',
+    stepNumber: 4,
+    stepTitle: 'Break & Execution',
+    timeframe: 'H4 / H1',
+    instruction: 'Rejection ক্যান্ডেলের High/Low ব্রেক হয়েছে এবং ন্যূনতম 1:3 RRR কনফার্মড?',
+    step: 'Step 4: Break & Execution',
+    label: 'Break & Execution',
+    description: 'Rejection ক্যান্ডেলের High/Low ব্রেক হয়েছে এবং ন্যূনতম 1:3 RRR কনফার্মড?',
+    checked: false,
+  },
+];
+
+export function getDefaultChecklist(strategy: StrategyType): ChecklistItem[] {
+  const template = strategy === 'ICT_SILVER_BULLET' ? SILVER_BULLET_CHECKLIST : EMA_SWING_CHECKLIST;
+  return JSON.parse(JSON.stringify(template));
+}

@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #070B18;
+    --card-dark: #0D1426;
+    --primary-blue: #3B82F6;
+    --primary-violet: #8B5CF6;
+    --soft-cyan: #38BDF8;
+  }
+
+  body {
+    background-color: #070B18;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Institutional Card and Glow Accents */
+.card-depth {
+  background: #0D1426;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(7, 11, 24, 0.7), 0 0 15px -3px rgba(59, 130, 246, 0.04);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.card-depth:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 6px 24px -2px rgba(7, 11, 24, 0.8), 0 0 20px -2px rgba(59, 130, 246, 0.08);
+}
+
+.glow-blue-subtle {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.glow-violet-subtle {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.glow-cyan-subtle {
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.glow-gate-approved {
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.22);
+}
+
+.glow-gate-locked {
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.15);
+}
+
+/* Micro animations */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "timestamp" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    },
+    "UserSettings": {
+      "collection": "users/{userId}/settings",
+      "fields": {
+        "soundEnabled": { "type": "boolean" },
+        "soundVolume": { "type": "number" },
+        "defaultRiskPercentage": { "type": "number" },
+        "maxAllowedRiskPercentage": { "type": "number" },
+        "dailyLossLimit": { "type": "number" },
+        "maxTradesPerDay": { "type": "number" },
+        "silverBulletMinRR": { "type": "number" },
+        "emaSwingMinRR": { "type": "number" },
+        "brokerUrl": { "type": "string" },
+        "londonWindowStart": { "type": "string" },
+        "londonWindowEnd": { "type": "string" },
+        "nyWindowStart": { "type": "string" },
+        "nyWindowEnd": { "type": "string" },
+        "approvalExpirationSeconds": { "type": "number" },
+        "compactMode": { "type": "boolean" },
+        "animationsEnabled": { "type": "boolean" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    },
+    "UserDraft": {
+      "collection": "users/{userId}/drafts",
+      "fields": {
+        "strategy": { "type": "string" },
+        "checklist": { "type": "map" },
+        "checklistCompletion": { "type": "number" },
+        "pair": { "type": "string" },
+        "direction": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "entry": { "type": "string" },
+        "stopLoss": { "type": "string" },
+        "takeProfit": { "type": "string" },
+        "riskPercent": { "type": "number" },
+        "rr": { "type": "number" },
+        "marketBias": { "type": "string" },
+        "emotionalState": { "type": "string" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    },
+    "TradingJournal": {
+      "collection": "users/{userId}/trading_journal",
+      "fields": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "timestamp" },
+        "pair": { "type": "string" },
+        "strategy": { "type": "string" },
+        "direction": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "entry": { "type": "number" },
+        "stopLoss": { "type": "number" },
+        "takeProfit": { "type": "number" },
+        "riskPercent": { "type": "number" },
+        "cashRisk": { "type": "number" },
+        "positionSize": { "type": "number" },
+        "rr": { "type": "number" },
+        "session": { "type": "string" },
+        "marketBias": { "type": "string" },
+        "emotionalState": { "type": "string" },
+        "checklistCompletion": { "type": "number" },
+        "reason": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string" },
+        "outcome": { "type": "string" },
+        "dateStr": { "type": "string" },
+        "timeStr": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "NoTradeLog": {
+      "collection": "users/{userId}/no_trade_logs",
+      "fields": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "timestamp" },
+        "reason": { "type": "string" },
+        "strategy": { "type": "string" },
+        "pair": { "type": "string" },
+        "session": { "type": "string" },
+        "notes": { "type": "string" },
+        "dateStr": { "type": "string" },
+        "timeStr": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "DailySession": {
+      "collection": "users/{userId}/daily_sessions",
+      "fields": {
+        "dateStr": { "type": "string" },
+        "tradesToday": { "type": "number" },
+        "riskUsedPct": { "type": "number" },
+        "approvedSetups": { "type": "number" },
+        "noTradeLogs": { "type": "number" },
+        "disciplineScore": { "type": "number" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    },
+    "UserStatistics": {
+      "collection": "users/{userId}/statistics",
+      "fields": {
+        "totalTrades": { "type": "number" },
+        "wins": { "type": "number" },
+        "losses": { "type": "number" },
+        "breakevens": { "type": "number" },
+        "noTradeCount": { "type": "number" },
+        "avgRR": { "type": "number" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    }
+  }
+}
